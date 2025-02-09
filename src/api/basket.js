@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const basketApi = axios.create({
-  baseURL: "http://localhost:8000/basket",
+  baseURL: "https://67a8d1746e9548e44fc22206.mockapi.io/basket",
 });
 
 // Add Product 🚩
