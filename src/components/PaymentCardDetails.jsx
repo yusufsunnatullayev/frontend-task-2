@@ -48,7 +48,7 @@ const PaymentCardDetails = ({ isValid, setIsValid }) => {
       return "Visa";
     } else if (/^5[1-5]/.test(cleanedNumber)) {
       return "MasterCard";
-    } else if (/^8600/.test(cleanedNumber)) {
+    } else if (/^8600/.test(cleanedNumber) || /^5614/.test(cleanedNumber)) {
       return "UzCard";
     } else if (/^9860/.test(cleanedNumber)) {
       return "Humo";
