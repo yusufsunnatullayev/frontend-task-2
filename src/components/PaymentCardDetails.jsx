@@ -12,6 +12,7 @@ const PaymentCardDetails = ({ isValid, setIsValid }) => {
   const [expires, setExpires] = useState("");
   const [cvv, setCvv] = useState("");
   const [resText, setResText] = useState("");
+  const [isCvv, setIsCvv] = useState(false);
 
   const validateCardNumber = (number) => {
     const cleanedNumber = number.replace(/\D/g, "");
@@ -45,14 +46,19 @@ const PaymentCardDetails = ({ isValid, setIsValid }) => {
     const cleanedNumber = number.replace(/\D/g, "");
 
     if (/^4/.test(cleanedNumber)) {
+      setIsCvv(true);
       return "Visa";
     } else if (/^5[1-5]/.test(cleanedNumber)) {
+      setIsCvv(true);
       return "MasterCard";
     } else if (/^8600/.test(cleanedNumber) || /^5614/.test(cleanedNumber)) {
+      setIsCvv(false);
       return "UzCard";
     } else if (/^9860/.test(cleanedNumber)) {
+      setIsCvv(false);
       return "Humo";
     } else {
+      setIsCvv(false);
       return "Unknown";
     }
   };
@@ -149,20 +155,22 @@ const PaymentCardDetails = ({ isValid, setIsValid }) => {
             required
           />
         </div>
-        <div className="w-1/2 flex flex-col gap-1">
-          <label className="text-sm font-semibold">CVV</label>
-          <input
-            className="w-full py-2 px-3 rounded-md duration-200 text-base font-semibold border border-gray-300 focus:outline-none focus:border-purple-600"
-            type="text"
-            value={cvv}
-            onChange={(e) =>
-              setCvv(e.target.value.replace(/\D/g, "").slice(0, 3))
-            }
-            placeholder="XXX"
-            maxLength={3}
-            required
-          />
-        </div>
+        {isCvv && (
+          <div className="w-1/2 flex flex-col gap-1">
+            <label className="text-sm font-semibold">CVV</label>
+            <input
+              className="w-full py-2 px-3 rounded-md duration-200 text-base font-semibold border border-gray-300 focus:outline-none focus:border-purple-600"
+              type="text"
+              value={cvv}
+              onChange={(e) =>
+                setCvv(e.target.value.replace(/\D/g, "").slice(0, 3))
+              }
+              placeholder="XXX"
+              maxLength={3}
+              required
+            />
+          </div>
+        )}
       </div>
       <button className="w-full mt-3 py-2 px-3 rounded-lg cursor-pointer bg-purple-600 text-white font-semibold hover:bg-purple-700 duration-200">
         Enter

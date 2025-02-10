@@ -77,7 +77,7 @@ const PaymentConfirmation = ({ smsCode }) => {
           <input
             key={index}
             ref={(el) => (inputRefs.current[index] = el)}
-            className="w-1/4 h-14 rounded-xl bg-gray-200 border-none focus:outline-none focus:border focus:border-purple-600 px-7 py-3 text-3xl flex items-center justify-center text-purple-600 font-semibold"
+            className="w-1/4 h-14 rounded-xl bg-gray-200 border-none focus:outline-none focus:border focus:border-purple-600 px-[8%] py-3 text-3xl flex items-center justify-center text-purple-600 font-semibold"
             type="text"
             maxLength={1}
             value={digit}
