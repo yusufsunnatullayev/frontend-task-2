@@ -33,7 +33,7 @@ const PaymentModal = () => {
       <form
         onSubmit={handleSubmit}
         onClick={(e) => e.stopPropagation()}
-        className="w-1/4 bg-white shadow p-5 rounded-xl flex flex-col gap-1 items-start"
+        className="w-9/10 md:w-1/4 bg-white shadow p-5 rounded-xl flex flex-col gap-1 items-start"
       >
         <IoClose
           className="text-lg self-end cursor-pointer hover:text-gray-400 duration-200"

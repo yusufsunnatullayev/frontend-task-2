@@ -32,8 +32,8 @@ const BasketProductCard = ({ product }) => {
   }, [amount]);
 
   return (
-    <div className="flex items-start justify-between w-full">
-      <div className="flex items-start justify-between w-4/5">
+    <div className="flex flex-col md:flex-row items-start justify-between w-full">
+      <div className="flex flex-col md:flex-row items-start justify-between w-4/5">
         <div className="flex items-start gap-3">
           <img
             className="w-[100px] h-[100px] object-cover rounded-lg"
@@ -44,7 +44,7 @@ const BasketProductCard = ({ product }) => {
             <h1 className="text-lg font-bold">
               {product?.title || "Loading..."}
             </h1>
-            <p className="text-sm w-96">
+            <p className="text-sm w-auto md:w-96">
               {product?.description || "No description available."}
             </p>
             <FiTrash

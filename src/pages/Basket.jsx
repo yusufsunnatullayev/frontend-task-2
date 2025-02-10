@@ -44,10 +44,10 @@ const Basket = () => {
   setProductsAmount(totalProducts);
 
   return (
-    <section className="w-full px-[8%] py-10">
+    <section className="w-full px-[2%] lg:px-[8%] py-10">
       {basketProducts && basketProducts.length ? (
-        <div className="w-full flex items-start justify-between gap-10">
-          <div className="w-3/4 rounded-xl bg-white shadow p-5">
+        <div className="w-full flex flex-col-reverse md:flex-row items-start justify-between gap-10">
+          <div className="w-full md:w-3/4 rounded-xl bg-white shadow p-5">
             <h1 className="text-2xl font-semibold mb-7">
               Basket{" "}
               <span className="text-sm text-gray-400">

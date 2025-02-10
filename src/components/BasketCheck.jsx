@@ -7,7 +7,7 @@ const BasketCheck = () => {
   const setModal = useManageState((state) => state.setModal);
 
   return (
-    <div className="w-1/4 rounded-xl bg-white shadow p-5 flex flex-col gap-8">
+    <div className="w-full md:w-1/4 rounded-xl bg-white shadow p-5 flex flex-col gap-8">
       <div className="flex flex-col gap-1">
         <h1 className="text-base font-bold">Delivery to pick-up point</h1>
         <span className="text-sm font-semibold text-gray-400">
